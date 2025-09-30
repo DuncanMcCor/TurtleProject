@@ -213,7 +213,7 @@
             document.getElementById('next-button').disabled = currentSlide === totalSlides;
             
             // Update progress bar
-            const percent = (currentSlide / totalSlides) * 150;
+            const percent = (currentSlide / totalSlides) * 100;
             document.getElementById('progress-bar').style.width = `${percent}%`;
             document.getElementById('slide-number').textContent = currentSlide;
         }

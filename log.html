@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loggerhead Sea Turtle (Caretta caretta) | Alabama Ecology</title>
+    <!-- Load Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for a cleaner presentation look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #eef2ff; /* Light lavender background */
+        }
+        .slide-container {
+            min-height: 85vh;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .progress-bar-fill {
+            transition: width 0.3s ease;
+        }
+        .button-nav {
+            transition: all 0.2s ease;
+        }
+        .button-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-xl overflow-hidden shadow-2xl slide-container">
+
+        <!-- Header and Progress Bar -->
+        <header class="p-6 bg-indigo-700 text-white shadow-lg">
+            <h1 class="text-3xl font-extrabold tracking-tight">Loggerhead Sea Turtle: <span class="italic font-light">Caretta caretta</span></h1>
+            <p class="mt-1 text-indigo-200">Endangered Species Research for Alabama High Schools</p>
+        </header>
+
+        <!-- Slide Display Area -->
+        <div id="slides-content" class="p-6 md:p-10">
+
+            <!-- Slide 1: Species Overview -->
+            <div id="slide-1" class="slide active">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-800 mb-4 border-b-2 pb-2 border-indigo-200">1. Species Information & Status</h2>
+                
+                <div class="md:flex md:gap-8 items-start">
+                    <img src="https://placehold.co/350x220/3b82f6/ffffff?text=Loggerhead+Turtle+Image" onerror="this.onerror=null;this.src='https://placehold.co/350x220/3b82f6/ffffff?text=Image+of+Caretta+caretta';" alt="Placeholder image of a Loggerhead Sea Turtle" class="w-full md:w-1/2 rounded-lg mb-4 object-cover shadow-lg">
+                    
+                    <div class="md:w-1/2">
+                        <p class="text-gray-700 mb-4">The Loggerhead is named for its exceptionally <strong class="font-semibold">large head and massive jaw muscles</strong>, which allow it to crush the hard shells of prey like conchs and crabs. They are the most common sea turtle species found nesting in the United States.</p>
+                        <ul class="list-disc list-inside space-y-2 text-sm text-gray-600 bg-gray-50 p-4 rounded-lg">
+                            <li><strong class="text-indigo-700">Scientific Name:</strong> <span class="italic">Caretta caretta</span></li>
+                            <li><strong class="text-indigo-700">Average Adult Size:</strong> Approx. 92 cm (36 inches) in shell length.</li>
+                            <li><strong class="text-indigo-700">Average Adult Weight:</strong> 113 kg (250 lbs).</li>
+                            <li><strong class="text-indigo-700">Appearance:</strong> Reddish-brown, slightly heart-shaped carapace (top shell) and a pale yellowish plastron (bottom shell).</li>
+                        </ul>
+                        <div class="mt-4 p-3 bg-red-100 text-red-800 rounded-lg border-l-4 border-red-500">
+                            <strong class="font-bold">Conservation Status:</strong>
+                            <ul class="list-disc list-inside ml-4 text-sm mt-1">
+                                <li><strong class="font-semibold">U.S. ESA:</strong> <span class="font-bold">Threatened</span> (specifically the Northwest Atlantic Ocean population segment found in Alabama).</li>
+                                <li><strong class="font-semibold">IUCN Red List:</strong> <span class="font-bold">Vulnerable</span> worldwide.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Habitat and Distribution in Alabama -->
+            <div id="slide-2" class="slide">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-800 mb-4 border-b-2 pb-2 border-indigo-200">2. Habitat & Alabama Distribution</h2>
+                <p class="text-gray-700 mb-4">Loggerheads are widely distributed across the Atlantic, Pacific, and Indian Oceans. They favor coastal areas, bays, lagoons, and the continental shelf, where they forage for food.</p>
+                <div class="bg-teal-50 p-6 rounded-lg border-l-4 border-teal-500">
+                    <h3 class="text-xl font-semibold text-teal-800 mb-3">Focus on Alabama:</h3>
+                    <p class="text-gray-700">Loggerheads are the most common sea turtle to nest on Alabama's beaches. Their critical habitat areas include:</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-1 text-gray-600">
+                        <li><strong class="font-medium">Nesting Beaches:</strong> Gulf Coast beaches in <strong class="text-teal-700">Mobile and Baldwin counties</strong>, including areas near Fort Morgan, Gulf Shores, and Bon Secour National Wildlife Refuge.</li>
+                        <li><strong class="font-medium">Marine Habitat:</strong> Shallow coastal waters, estuaries, and river mouths along the Alabama Gulf Coast.</li>
+                    </ul>
+                    <img src="https://placehold.co/400x200/10b981/ffffff?text=Alabama+Gulf+Coast+Map+Placeholder" alt="Placeholder map showing the Alabama Gulf Coast" class="mt-4 rounded-lg shadow-md max-w-sm mx-auto">
+                </div>
+            </div>
+
+            <!-- Slide 3: Nesting Habits -->
+            <div id="slide-3" class="slide">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-800 mb-4 border-b-2 pb-2 border-indigo-200">3. The Journey Home: Nesting</h2>
+                <p class="text-gray-700 mb-4">Female Loggerheads exhibit remarkable "natal homing," often returning thousands of miles to nest on the same general beach where they were born.</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-lg text-yellow-800 mb-2">Nesting Cycle Details:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-sm text-gray-700">
+                            <li><strong class="font-medium">Nesting Season (AL):</strong> May 1st through August.</li>
+                            <li><strong class="font-medium">Hatching Season (AL):</strong> July through October.</li>
+                            <li><strong class="font-medium">Nesting Frequency:</strong> Females nest approximately 4 times per season.</li>
+                            <li><strong class="font-medium">Clutch Size:</strong> Typically lay 80–120 soft-shelled eggs per nest.</li>
+                            <li><strong class="font-medium">Incubation:</strong> Eggs incubate for about 55–60 days.</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-pink-50 rounded-lg border-l-4 border-pink-500">
+                        <h4 class="font-bold text-lg text-pink-800 mb-2">Locating the Ocean:</h4>
+                        <p class="text-sm text-gray-700">Hatchlings instinctively crawl toward the brightest horizon, which, on a natural beach, is the moonlight reflecting off the ocean. <strong class="font-medium">Artificial light from coastal development is a major threat</strong>, as it disorients hatchlings, causing them to crawl inland where they perish.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Movement and Locomotion -->
+            <div id="slide-4" class="slide">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-800 mb-4 border-b-2 pb-2 border-indigo-200">4. Movement & Locomotion</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Aquatic (Swimming)</h3>
+                        <p class="text-gray-700">Loggerheads are powerful swimmers, using their forelimbs in a strong, flapping motion adapted for long-distance migrations between feeding areas and nesting grounds. They often ride ocean currents, covering thousands of miles.</p>
+                        <ul class="list-disc list-inside ml-4 mt-2 text-sm text-gray-600">
+                            <li>Spend about 85% of their time underwater.</li>
+                            <li>Typical dive duration is 2-45 minutes.</li>
+                            <li>Navigate using the Earth's magnetic field.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Terrestrial (Crawling)</h3>
+                        <p class="text-gray-700">When females crawl onto the beach to nest, they use an **alternating** pattern, moving one front flipper followed by the opposite rear flipper, then repeating the process. This is the key difference when identifying their tracks.</p>
+                        <img src="https://placehold.co/350x220/3b82f6/ffffff?text=Loggerhead+Moving+on+Sand" alt="Placeholder image of a Loggerhead crawling on sand" class="mt-4 rounded-lg shadow-md w-full">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 5: Tracking and Resources -->
+            <div id="slide-5" class="slide">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-800 mb-4 border-b-2 pb-2 border-indigo-200">5. Tracking & Resources (Footprints)</h2>
+                
+                <div class="md:flex md:gap-6 items-start">
+                    <div class="md:w-1/2">
+                        <h3 class="text-xl font-semibold text-teal-700 mb-3">Loggerhead Track Identification:</h3>
+                        <p class="text-gray-700 mb-4">The tracks (crawls) left by a Loggerhead female on the beach are highly distinctive and used by conservation teams for nest monitoring:</p>
+                        <ul class="list-disc list-inside space-y-2 text-sm text-gray-700 bg-teal-50 p-4 rounded-lg">
+                            <li><strong class="font-medium">Flipper Marks:</strong> Marks are comma-shaped and **alternating**. This pattern leaves a distinctive, wavy line down the center of the track.</li>
+                            <li><strong class="font-medium">Track Width:</strong> The track is relatively wide, averaging **70 to 90 cm (28 to 35 inches)**.</li>
+                            <li><strong class="font-medium">Tail Drag:</strong> Crucially, a Loggerhead track usually has **NO** thin, straight, well-defined tail drag mark down the center (unlike the Green turtle).</li>
+                            <li><strong class="font-medium">"False Crawl":</strong> Look for signs of sand thrown backward; an abandoned attempt is called a "false crawl."</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/400x200/4F46E5/ffffff?text=Loggerhead+Track+Diagram" alt="Diagram showing the alternating crawl pattern of a Loggerhead" class="w-full rounded-lg shadow-lg mt-4 md:mt-0">
+                        <h3 class="text-xl font-semibold text-indigo-700 mt-6 mb-3">Additional Resources:</h3>
+                        <ul class="list-disc list-inside ml-4 space-y-1 text-sm text-indigo-600">
+                            <li><a href="https://www.fws.gov/species/loggerhead-caretta-caretta" target="_blank" class="hover:underline">U.S. Fish & Wildlife Service Loggerhead Profile</a></li>
+                            <li><a href="https://conserveturtles.org/sea-turtles/" target="_blank" class="hover:underline">Sea Turtle Conservancy (General Info)</a></li>
+                            <li><a href="https://youtu.be/zS_1sYwJzX4" target="_blank" class="hover:underline">Video: Saving Sea Turtles (NOAA Fisheries)</a></li>
+                            <li><a href="https://www.outdooralabama.com/what-know-about-sea-turtles" target="_blank" class="hover:underline">Outdoor Alabama: Sea Turtle Information</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation and Footer -->
+        <footer class="p-6 md:p-8 bg-gray-100 rounded-b-xl border-t border-gray-200">
+            <div id="progress-container" class="mb-4">
+                <div class="text-sm font-medium text-indigo-700 mb-1">Progress: <span id="slide-number">1</span> / 5</div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full progress-bar-fill" style="width: 20%;"></div>
+                </div>
+            </div>
+            
+            <div class="flex justify-between">
+                <button id="prev-button" onclick="changeSlide(-1)" disabled class="button-nav bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-full inline-flex items-center disabled:opacity-50">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    Previous
+                </button>
+                <button id="next-button" onclick="changeSlide(1)" class="button-nav bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full inline-flex items-center">
+                    Next
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript for Slideshow Functionality -->
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 5;
+
+        // Function to update the view
+        function updateSlide() {
+            // Hide all slides
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Show the current slide
+            const activeSlide = document.getElementById(`slide-${currentSlide}`);
+            if (activeSlide) {
+                activeSlide.classList.add('active');
+            }
+
+            // Update navigation buttons
+            document.getElementById('prev-button').disabled = currentSlide === 1;
+            document.getElementById('next-button').disabled = currentSlide === totalSlides;
+            
+            // Update progress bar
+            const percent = (currentSlide / totalSlides) * 150;
+            document.getElementById('progress-bar').style.width = `${percent}%`;
+            document.getElementById('slide-number').textContent = currentSlide;
+        }
+
+        // Function to change the slide
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 1) {
+                currentSlide = 1;
+            } else if (currentSlide > totalSlides) {
+                currentSlide = totalSlides;
+            }
+            updateSlide();
+        }
+
+        // Initialize the first slide
+        window.onload = updateSlide;
+    </script>
+</body>
+</html>

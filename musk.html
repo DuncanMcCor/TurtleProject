@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flattened Musk Turtle - Endangered Species Research</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for a clean, professional look */
+        .slide-container {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .slide-content h2 {
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid #3b82f6; /* Blue border */
+            padding-bottom: 0.25rem;
+        }
+        .placeholder-image {
+            background-color: #e0f2f1; /* Light teal background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            border: 2px dashed #0f766e; /* Darker teal border */
+            color: #0f766e;
+            font-weight: 600;
+            text-align: center;
+        }
+        /* Style for the tracking section to highlight the method */
+        .tracking-note {
+            background-color: #fef3c7; /* Light yellow background */
+            border-left: 5px solid #fbbf24; /* Amber accent */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+        }
+        /* Use Inter font */
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-xl p-6 sm:p-10 border border-gray-200">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-6 text-center">
+            Alabama's Endangered Turtles: Flattened Musk Turtle
+        </h1>
+
+        <!-- Slide Presentation Area -->
+        <div id="presentation-slides" class="slide-container">
+            <!-- Slide content will be rendered here by JavaScript -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between mt-8 pt-4 border-t border-gray-200">
+            <button id="prev-btn" class="px-6 py-3 bg-gray-300 text-gray-800 font-bold rounded-lg shadow-md hover:bg-gray-400 transition duration-300 disabled:opacity-50" disabled>
+                Previous
+            </button>
+            <span id="slide-indicator" class="text-gray-600 self-center font-medium"></span>
+            <button id="next-btn" class="px-6 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 disabled:opacity-50">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Array containing all the slide data
+        const slides = [
+            {
+                title: "Critically Endangered: The Flattened Musk Turtle",
+                content: `
+                    <div class="space-y-4">
+                        <p class="text-lg text-gray-700">The Flattened Musk Turtle (Sternotherus depressus) is a small, freshwater turtle <strong>endemic to Alabama</strong>, meaning it is found nowhere else in the world. It is highly specialized for life in fast-flowing streams.</p>
+
+                        <div class="grid md:grid-cols-2 gap-6 items-center">
+                            <div class="space-y-3">
+                                <h3 class="text-2xl font-semibold text-blue-700">Conservation Status</h3>
+                                <ul class="list-disc list-inside ml-4 space-y-2 text-gray-600">
+                                    <li><strong class="text-red-600">IUCN: Critically Endangered</strong></li>
+                                    <li><strong class="text-red-600">USFWS: Threatened</strong> (since 1987)</li>
+                                </ul>
+                                <p class="text-sm text-gray-500 mt-2">Its limited range makes it extremely vulnerable to habitat degradation.</p>
+                            </div>
+                            <div class="h-48 placeholder-image">
+                                <p>Placeholder: Flattened Musk Turtle Image (Show flat shell)</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "Adaptations and Description",
+                content: `
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-semibold text-blue-700">Key Features</h3>
+                            <ul class="list-disc list-inside ml-4 space-y-2 text-gray-700">
+                                <li><strong>Size:</strong> Small, rarely over 4.3 inches (11 cm) in carapace length.</li>
+                                <li><strong>Shell:</strong> Distinctly <strong>flattened</strong> carapace. This unique adaptation allows it to squeeze into tight rock crevices to escape predators and strong currents.</li>
+                                <li><strong>Color:</strong> Yellow-brown to dark brown, often with small black spots or streaks.</li>
+                                <li><strong>Head:</strong> Olive-colored with fine dark spots; has two pairs of fleshy barbels on its chin.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-semibold text-blue-700">Diet</h3>
+                            <p class="text-gray-700">Adults are highly specialized predators, feeding primarily on:</p>
+                            <ul class="list-disc list-inside ml-4 space-y-2 text-gray-700">
+                                <li><strong>Snails</strong> and <strong>Mussels</strong> (Mollusks)</li>
+                                <li>Benthic insects (aquatic insects) and crayfish.</li>
+                            </ul>
+                            <p class="text-sm text-gray-500">The health of its mollusk food source is directly tied to water quality.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "Habitat and Distribution in Alabama",
+                content: `
+                    <div class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-6 items-start">
+                            <div class="space-y-4">
+                                <h3 class="text-2xl font-semibold text-blue-700">Geographic Range</h3>
+                                <p class="text-lg text-gray-700">The species is restricted to the <strong>upper Black Warrior River system</strong> in west-central Alabama, primarily upstream from the Bankhead Dam.</p>
+                                <p class="text-sm text-gray-600">This area encompasses parts of 11 counties, including Blount, Cullman, Etowah, Fayette, Jefferson, and Winston.</p>
+                                <h3 class="text-2xl font-semibold text-blue-700 mt-4">Optimal Habitat</h3>
+                                <ul class="list-disc list-inside ml-4 space-y-2 text-gray-700">
+                                    <li>Clear, free-flowing creeks and small rivers.</li>
+                                    <li>Rocky or sandy bottoms with abundant <strong>submerged boulders and crevices</strong> for cover.</li>
+                                    <li>Pools (1-1.5m deep) alternating with riffles (shallow current).</li>
+                                </ul>
+                            </div>
+                            <div class="h-64 placeholder-image">
+                                <p>Placeholder: Map of Black Warrior River Drainage/Range</p>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-red-600 mt-6">Major Threat: Siltation</h3>
+                        <p class="text-gray-700">The primary reason for its decline is <strong>siltation</strong> (excessive sediment/mud). Silt clogs the essential rock crevices the turtles use for shelter and suffocates the mollusks they eat, effectively destroying their home and food source.</p>
+                    </div>
+                `
+            },
+            {
+                title: "Nesting and Movement",
+                content: `
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-semibold text-blue-700">Movement and Activity</h3>
+                            <ul class="list-disc list-inside ml-4 space-y-2 text-gray-700">
+                                <li><strong>Highly Aquatic:</strong> They are bottom-dwellers and seldom bask.</li>
+                                <li><strong>Locomotion:</strong> They do not "swim" extensively. They <strong>scurry and walk</strong> along the streambed, using their webbed feet to climb over rocks and maintain position against the current.</li>
+                                <li><strong>Activity:</strong> Primarily <strong>nocturnal or crepuscular</strong> (active at dawn/dusk) in summer.</li>
+                                <li><strong>Home Range:</strong> Typically small, with most adults staying within 20–30 meters of a single location.</li>
+                            </ul>
+                            <div class="h-32 placeholder-image">
+                                <p>Placeholder: Video/Image of Turtle Walking on Stream Bottom</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-semibold text-blue-700">Reproduction and Nesting</h3>
+                            <ul class="list-disc list-inside ml-4 space-y-2 text-gray-700">
+                                <li><strong>Nesting Season:</strong> May through early July.</li>
+                                <li><strong>Clutches:</strong> Females can lay up to two clutches per year.</li>
+                                <li><strong>Clutch Size:</strong> Very small, typically 1 to 4 eggs per clutch.</li>
+                                <li><strong>Nest Site:</strong> Shallow nests dug in <strong>sandy banks</strong> or the surrounding streamside riparian zone.</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "Tracking, Footprints, and Resources",
+                content: `
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-blue-700">Tracking for Conservation</h3>
+
+                        <div class="tracking-note">
+                            <p class="font-bold text-lg mb-2">Tracking Note: Footprints vs. Science</p>
+                            <p>While you requested information on footprints for tracking, because the Flattened Musk Turtle is highly aquatic and rarely leaves the water, researchers primarily track them using <strong>radio-telemetry</strong> (attaching small transmitters to the shell) and <strong>baited funnel traps</strong> to monitor populations.</p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <h4 class="text-xl font-medium">Footprint Mockup</h4>
+                                <div class="h-48 placeholder-image text-sm">
+                                    <p>Placeholder: General Musk Turtle Tracks.<br>Tracks would be parallel webbed foot marks and a faint tail/shell drag in the sand near a nesting area.</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <h3 class="text-2xl font-semibold text-blue-700">Further Research Links</h3>
+                                <ul class="list-disc list-inside ml-4 space-y-2 text-gray-700">
+                                    <li><a href="https://ecos.fws.gov/ecp/species/6961" target="_blank" class="text-blue-500 hover:text-blue-700 font-medium">USFWS Species Profile (ECOS)</a></li>
+                                    <li><a href="https://www.outdooralabama.com/turtles/flattened-musk-turtle" target="_blank" class="text-blue-500 hover:text-blue-700 font-medium">Outdoor Alabama Fact Sheet</a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/flattened_musk_turtle" target="_blank" class="text-blue-500 hover:text-blue-700 font-medium">Wikipedia (Good for range/scientific detail)</a></li>
+                                    <li><span class="text-gray-500">Video Search: Search YouTube for "Musk Turtle in Stream" to see similar movement patterns.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        ];
+
+        let currentSlideIndex = 0;
+        const presentationElement = document.getElementById('presentation-slides');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const indicator = document.getElementById('slide-indicator');
+
+        function renderSlide(index) {
+            const slide = slides[index];
+            presentationElement.innerHTML = `
+                <div class="slide-content space-y-6 p-4">
+                    <h2 class="text-3xl font-bold text-gray-900">${slide.title}</h2>
+                    ${slide.content}
+                </div>
+            `;
+            updateButtons();
+        }
+
+        function updateButtons() {
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === slides.length - 1;
+            indicator.textContent = `Slide ${currentSlideIndex + 1} of ${slides.length}`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                renderSlide(currentSlideIndex);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlideIndex < slides.length - 1) {
+                currentSlideIndex++;
+                renderSlide(currentSlideIndex);
+            }
+        });
+
+        // Initialize presentation
+        renderSlide(currentSlideIndex);
+    </script>
+</body>
+</html>

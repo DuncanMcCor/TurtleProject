@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endangered Species: Alabama Red-bellied Turtle</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c5282; /* Dark Blue for academic feel */
+            --secondary-color: #f6ad55; /* Orange/Red for the plastron */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+        }
+        .slide-card {
+            min-height: 50vh;
+            display: none; /* Controlled by JS */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .active-slide {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-button {
+            transition: all 0.2s;
+        }
+        .nav-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        }
+        /* Custom scrollbar for content areas */
+        .content-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .content-scroll::-webkit-scrollbar-thumb {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Presentation Title Header -->
+        <header class="text-center mb-6 p-4 bg-white rounded-xl shadow-lg">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-800">
+                Endangered Species Research: <span class="text-red-600">Alabama Red-bellied Turtle</span>
+            </h1>
+            <p class="mt-2 text-lg text-gray-600">
+                <span id="slide-number">1</span> / 6
+            </p>
+        </header>
+
+        <!-- Slides Container -->
+        <div id="slides-container" class="relative">
+
+            <!-- Slide 1: Introduction & Status -->
+            <div id="slide-1" class="slide-card active-slide bg-white p-6 sm:p-8 rounded-xl">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 border-b-2 pb-2 mb-4">1. Species & Conservation Status</h2>
+                <div class="grid md:grid-cols-2 gap-6 items-start">
+                    <div>
+                        <p class="text-lg mb-4 text-gray-700">The Alabama Red-bellied Turtle, or **Alabama Red-bellied Cooter** (*Pseudemys alabamensis*), is an emblem of Alabama's unique biodiversity.</p>
+
+                        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500 mb-4">
+                            <h3 class="text-xl font-semibold text-red-700 mb-2">Conservation Status</h3>
+                            <ul class="list-disc list-inside text-red-800 space-y-1">
+                                <li>**Official State Reptile of Alabama.**</li>
+                                <li>**U.S. Fish & Wildlife Service Status:** <span class="font-bold">Endangered</span> (since 1987).</li>
+                                <li>**IUCN Red List:** Endangered (EN).</li>
+                                <li>It has one of the smallest distributions of any North American turtle.</li>
+                            </ul>
+                        </div>
+                        <p class="text-gray-700">Key distinguishing features include its highly arched shell (carapace), the striking **pale yellow to reddish/orange plastron** (under shell), and a prominent notch at the tip of the upper jaw, bordered by tooth-like cusps.</p>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x400/FF5733/FFFFFF?text=Alabama+Red-bellied+Turtle" alt="Placeholder image of Alabama Red-bellied Turtle" class="w-full h-auto rounded-lg object-cover shadow-md">
+                        <p class="text-xs text-center mt-2 text-gray-500">Image Placeholder: Note the reddish plastron which gives it its common name.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Habitat & Distribution -->
+            <div id="slide-2" class="slide-card bg-white p-6 sm:p-8 rounded-xl">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 border-b-2 pb-2 mb-4">2. Habitat & Distribution</h2>
+                <div class="grid md:grid-cols-2 gap-6 items-start">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-3">Geographic Range:</h3>
+                        <p class="text-gray-700 mb-4">The turtle's range is extremely restricted, centered primarily in the **Mobile-Tensaw River Delta** in:</p>
+                        <ul class="list-disc list-inside text-gray-800 space-y-1 ml-4 mb-4">
+                            <li>Mobile County, Alabama</li>
+                            <li>Baldwin County, Alabama</li>
+                            <li>Adjacent to Mobile Bay.</li>
+                        </ul>
+                        <p class="text-sm text-gray-600 italic">They may also be found in coastal areas of extreme southeastern Mississippi.</p>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x400/388e3c/FFFFFF?text=Mobile-Tensaw+River+Delta" alt="Placeholder image of the Mobile-Tensaw River Delta" class="w-full h-auto rounded-lg object-cover shadow-md">
+                        <p class="text-xs text-center mt-2 text-gray-500">Image Placeholder: The critical Mobile-Tensaw Delta ecosystem.</p>
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-700 mt-4 mb-3">Preferred Habitat:</h3>
+                <p class="text-gray-700">They prefer shallow, slow-moving aquatic environments that are rich in vegetation, specifically:</p>
+                <ul class="list-disc list-inside text-gray-800 space-y-1 ml-4 mt-2">
+                    <li>Fresh to **brackish** (slightly salty) water.</li>
+                    <li>Shallow backwaters of rivers, bayous, and bays.</li>
+                    <li>Areas with soft, sandy bottoms.</li>
+                    <li>Extensive beds of aquatic plants (like hydrilla and eel-grass), which they use for cover, food (they are primarily herbivorous), and basking substrate.</li>
+                </ul>
+            </div>
+
+            <!-- Slide 3: Nesting Habits -->
+            <div id="slide-3" class="slide-card bg-white p-6 sm:p-8 rounded-xl">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 border-b-2 pb-2 mb-4">3. Life History: Nesting Habits</h2>
+                <div class="space-y-4 text-gray-700">
+                    <p>Female Red-bellied Turtles leave the water to find nesting sites, which is often the most dangerous activity for them due to road mortality.</p>
+
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                            <p class="font-bold text-lg text-blue-700">Season</p>
+                            <p>Nesting occurs from **April to early August**, with the peak activity usually in July.</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                            <p class="font-bold text-lg text-blue-700">Location</p>
+                            <p>Nests are dug on **dry land** in open, sparsely vegetated areas with **sandy soil** (e.g., river banks, levees, or dredge spoil sites like Gravine Island).</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                            <p class="font-bold text-lg text-blue-700">Clutch Size & Hatching</p>
+                            <p>Females lay about **4 to 9 eggs** per clutch. Hatchlings emerge in the fall (Sept-Nov) or may **overwinter** in the nest and emerge in the following spring.</p>
+                        </div>
+                    </div>
+
+                    <p class="text-red-700 font-semibold mt-4">Threats at Nesting Sites:</p>
+                    <p class="text-sm">Nest predation is high, with major threats coming from raccoons, fish crows, wild boars, and the invasive red imported fire ant.</p>
+                </div>
+            </div>
+
+            <!-- Slide 4: Movement and Tracking -->
+            <div id="slide-4" class="slide-card bg-white p-6 sm:p-8 rounded-xl">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 border-b-2 pb-2 mb-4">4. Movement & Tracking Clues</h2>
+                <div class="grid md:grid-cols-2 gap-6 items-start">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-3">How They Move:</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                            <li>**Aquatic Movement:** They are excellent swimmers (natatorial) and move easily through the slow-moving delta waters, often foraging in dense vegetation.</li>
+                            <li>**Basking:** They spend significant time basking on exposed logs or snags to regulate their body temperature (thermoregulation). They are very wary and will submerge quickly if disturbed.</li>
+                            <li>**Terrestrial Movement (Nesting):** The critical movement observed on land is the female's journey to and from the nesting site (sandy river banks/levees). This is where tracks are most likely to be found.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x400/b8860b/FFFFFF?text=Turtle+Track+in+Sand" alt="Placeholder image of turtle tracks in sand" class="w-full h-auto rounded-lg object-cover shadow-md">
+                        <p class="text-xs text-center mt-2 text-gray-500">Image Placeholder: Typical freshwater turtle tracks in sandy soil.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-3">Footprints for Tracking:</h3>
+                <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500 text-gray-700">
+                    <p class="font-semibold mb-2">Since specific *Pseudemys alabamensis* footprint photos are rare, here are the tracking clues to look for in the sandy nesting areas:</p>
+                    <ul class="list-disc list-inside ml-4 space-y-1 text-sm">
+                        <li>**Tracks:** A meandering, asymmetrical trail marked by the movement of the four feet. The rear feet often leave a wider drag mark than the front feet.</li>
+                        <li>**Belly Drag:** On soft, loose sand (like a dune or river bank), a wide, continuous, central drag mark will be visible from the bottom of the shell (plastron) scraping the ground.</li>
+                        <li>**Claw Marks:** Look for distinct, short, parallel scrape marks (3-5 toes) on either side of the central drag mark.</li>
+                        <li>**Nesting Site Clues:** Females leave a disturbed, circular area where they dug the shallow nest chamber, often covered up carefully to conceal the eggs.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Slide 5: Resources -->
+            <div id="slide-5" class="slide-card bg-white p-6 sm:p-8 rounded-xl content-scroll max-h-[80vh] overflow-y-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 border-b-2 pb-2 mb-4">5. Useful Resources & Links</h2>
+
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Official & Research Links:</h3>
+                <ul class="space-y-3">
+                    <li class="p-3 border rounded-lg bg-gray-50 hover:bg-gray-100 transition duration-150">
+                        <a href="https://www.outdooralabama.com/turtles/alabama-red-bellied-turtle" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                            Outdoor Alabama: Alabama Red-bellied Turtle
+                        </a>
+                        <p class="text-sm text-gray-600">State-level information on status, description, and life history.</p>
+                    </li>
+                    <li class="p-3 border rounded-lg bg-gray-50 hover:bg-gray-100 transition duration-150">
+                        <a href="https://ecos.fws.gov/ecp/species/1494" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                            U.S. Fish & Wildlife Service: Species Profile
+                        </a>
+                        <p class="text-sm text-gray-600">Official conservation status, legal documents, and recovery plan links.</p>
+                    </li>
+                    <li class="p-3 border rounded-lg bg-gray-50 hover:bg-gray-100 transition duration-150">
+                        <a href="https://iucn-tftsg.org/pseudemys-alabamensis-019/" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                            IUCN Red List / TFT SG: *Pseudemys alabamensis*
+                        </a>
+                        <p class="text-sm text-gray-600">Detailed scientific citation and distribution map information (Source 3.2).</p>
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-3">Video & Visual Resources:</h3>
+                <p class="text-gray-700 mb-2">Since direct video links may change, use this search term on major platforms (like YouTube) to find current footage:</p>
+                <div class="p-3 border rounded-lg bg-green-50 text-green-800 font-mono text-sm overflow-x-auto">
+                    "Alabama Red-bellied Turtle Mobile-Tensaw Delta"
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Look for videos focusing on conservation efforts, especially those mentioning the Mobile Causeway fencing designed to protect nesting females and hatchlings from road mortality.</p>
+            </div>
+            
+            <!-- Slide 6: Conservation Efforts -->
+            <div id="slide-6" class="slide-card bg-white p-6 sm:p-8 rounded-xl">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 border-b-2 pb-2 mb-4">6. Conservation Spotlight</h2>
+                <div class="space-y-4 text-gray-700">
+                    <p>The biggest man-made threat to the Alabama Red-bellied Turtle is **road mortality**. Females are often killed while crossing highways (like US 98 / Battleship Parkway) to reach nesting sites on higher ground.</p>
+                    
+                    <div class="bg-red-100 p-4 rounded-lg border-l-4 border-red-600">
+                        <h3 class="text-xl font-semibold text-red-800 mb-2">A Conservation Success: Road Fencing</h3>
+                        <p>In the Mobile-Tensaw Delta, a chain-link fence was installed along critical sections of the causeway to separate the delta from the bay. This has proven highly effective, significantly **reducing the deaths of nesting females and hatchlings** on the highway.</p>
+                    </div>
+
+                    <p>Other vital efforts include:</p>
+                    <ul class="list-disc list-inside ml-4 space-y-1">
+                        <li>**Habitat Protection:** Safeguarding the shallow, vegetated backwaters they rely on for food.</li>
+                        <li>**Predator Management:** Protecting known nesting sites from high-volume egg predators like raccoons and crows.</li>
+                        <li>**Monitoring:** Continuing to track population trends to ensure the species is recovering.</li>
+                    </ul>
+                    <p class="font-bold pt-4 text-gray-800">Your research helps bring awareness to these critical conservation needs!</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="flex justify-between mt-6 p-4 bg-white rounded-xl shadow-lg">
+            <button id="prev-btn" class="nav-button px-6 py-2 bg-gray-300 text-gray-800 font-semibold rounded-lg disabled:opacity-50" disabled>
+                &larr; Previous
+            </button>
+            <button id="next-btn" class="nav-button px-6 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700">
+                Next &rarr;
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide-card');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const slideNumberDisplay = document.getElementById('slide-number');
+        let currentSlide = 0;
+
+        // Function to show a specific slide
+        function showSlide(index) {
+            // Ensure index is within bounds
+            if (index < 0 || index >= slides.length) return;
+
+            // Hide all slides and remove active class
+            slides.forEach(slide => {
+                slide.classList.remove('active-slide');
+                slide.style.display = 'none';
+            });
+
+            // Show the current slide and add active class for animation
+            slides[index].style.display = 'block';
+            slides[index].classList.add('active-slide');
+
+            // Update state
+            currentSlide = index;
+            updateControls();
+        }
+
+        // Function to update the navigation buttons and slide number
+        function updateControls() {
+            // Update slide number text
+            slideNumberDisplay.textContent = currentSlide + 1;
+
+            // Update button states
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        // Event Listeners for navigation
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                showSlide(currentSlide + 1);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Initialize the presentation on load
+        window.onload = () => {
+            showSlide(0);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endangered Alabama Turtles: Gopher Tortoise</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the Inter font and general presentation look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* Light background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .slide-container {
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+        }
+        .slide {
+            display: none;
+            padding: 2.5rem;
+            min-height: 600px;
+            flex-direction: column;
+        }
+        .slide-active {
+            display: flex;
+        }
+        .next-btn {
+            background-color: #10B981; /* Emerald Green */
+            color: white;
+        }
+        .prev-btn {
+            background-color: #6B7280; /* Gray */
+            color: white;
+        }
+        .slide-dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 4px;
+            background-color: #D1D5DB;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .dot-active {
+            background-color: #10B981;
+            width: 16px;
+            border-radius: 5px;
+        }
+
+        /* Custom styling for the tracking section */
+        .tracking-box {
+            border: 2px dashed #34D399;
+            border-radius: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="presentation-container" class="slide-container">
+
+        <!-- Header -->
+        <header class="bg-gray-800 p-6 text-white rounded-t-xl">
+            <h1 class="text-3xl font-extrabold tracking-tight">
+                Alabama's Endangered Turtles: The Gopher Tortoise
+            </h1>
+            <p class="text-sm opacity-75 mt-1">
+                A high school research project on $\textit{Gopherus polyphemus}$
+            </p>
+        </header>
+
+        <!-- Slide 1: Species Overview -->
+        <div id="slide-1" class="slide slide-active">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 pb-2 border-emerald-500">
+                1. Keystone Species & Protection Status
+            </h2>
+            <div class="md:flex md:space-x-8">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/400x300/404040/FFFFFF?text=Gopher+Tortoise+Image" alt="Placeholder image of a Gopher Tortoise, showing its shovel-like front feet and domed shell." class="w-full h-auto object-cover rounded-xl shadow-lg mb-6"/>
+                </div>
+                <div class="md:w-1/2 space-y-4 text-gray-700">
+                    <p>
+                        The Gopher Tortoise is one of North America's oldest reptile species and the only tortoise native to the Southeastern U.S.
+                    </p>
+                    <div class="p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
+                        <h3 class="font-semibold text-lg text-emerald-800">Status in Alabama</h3>
+                        <ul class="list-disc list-inside text-sm mt-1">
+                            <li>Federally **Threatened** in the western counties (Mobile, Washington, Choctaw).</li>
+                            <li>State Protected: A species of **High Conservation Concern** statewide.</li>
+                        </ul>
+                    </div>
+                    <p>
+                        It is considered a **Keystone Species** because its burrows provide refuge for over 360 other species, including snakes, frogs, and insects.
+                    </p>
+                    <p class="text-sm italic">
+                        <a href="https://www.outdooralabama.com/gopher-tortoise-day/gopher-tortoise-facts" target="_blank" class="text-blue-600 hover:text-blue-800 underline">
+                            Source: Outdoor Alabama Facts
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Habitat and Range -->
+        <div id="slide-2" class="slide">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 pb-2 border-emerald-500">
+                2. Habitat & Range
+            </h2>
+            <div class="md:flex md:space-x-8">
+                <div class="md:w-1/2 space-y-4 text-gray-700">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">The Longleaf Pine Ecosystem</h3>
+                    <p>
+                        Gopher Tortoises live in the **Coastal Plain** region of Alabama. They prefer dry, upland habitats with **deep, well-drained, sandy soils**—perfect for digging their elaborate burrows.
+                    </p>
+                    <p>
+                        Their habitat is historically the **Longleaf Pine-Wiregrass Sandhills**. This environment requires periodic natural fire to keep the forest canopy open, allowing sunlight to reach the ground for the growth of low-lying herbaceous food plants.
+                    </p>
+                    <div class="p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-semibold text-lg text-yellow-800">Range in Alabama</h4>
+                        <p class="text-sm mt-1">
+                            They are found in counties including Mobile, Baldwin, Clarke, Coffee, Covington, Escambia, Geneva, Henry, Houston, and many others in the southern half of the state.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/400x300/65A30D/FFFFFF?text=Sandy+Longleaf+Pine+Habitat" alt="Placeholder image of Gopher Tortoise habitat, showing sandy soil, sparse trees, and low grass." class="w-full h-auto object-cover rounded-xl shadow-lg mt-6 md:mt-0"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Burrow and Movement -->
+        <div id="slide-3" class="slide">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 pb-2 border-emerald-500">
+                3. Movement and Tracking
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6 text-gray-700">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-semibold text-gray-800">Digging and Shelter</h3>
+                    <p>
+                        The Gopher Tortoise's life revolves around its burrow. Using its powerful, **shovel-like forefeet**, it digs tunnels that average 15 feet long and 6.5 feet deep, though some can exceed 40 feet.
+                    </p>
+                    <p>
+                        Movement outside the burrow is mainly for foraging for food (grasses, leaves, fruit) or basking in the sun. They are slow and steady, using their sturdy, **elephantine hind feet** to walk on land. They are **not** equipped for aquatic life.
+                    </p>
+                    <div class="p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-500">
+                        <h4 class="font-semibold text-lg text-indigo-800">The Burrow Apron</h4>
+                        <p class="text-sm mt-1">
+                            Look for the **burrow apron**, a distinctive mound of loose, fan-shaped sand at the entrance. The entrance itself is shaped like a **half-moon** and is usually about the same width as the tortoise's shell.
+                        </p>
+                    </div>
+                </div>
+                <div class="tracking-box p-4 flex flex-col items-center">
+                    <h3 class="text-xl font-bold mb-3 text-emerald-700">Tracking (Footprints)</h3>
+                    <img src="https://placehold.co/350x250/C8E6C9/25603A?text=Gopher+Tortoise+Tracks+Diagram" alt="Diagram showing Gopher Tortoise footprints: stubby, non-webbed feet creating four distinct prints in an alternating pattern, often with a slight drag mark from the shell or tail between the prints." class="rounded-lg shadow-md mb-4"/>
+                    <ul class="text-sm list-disc list-inside space-y-1">
+                        <li>**Front Prints:** Shovel-like, wide, and distinctive.</li>
+                        <li>**Rear Prints:** Stumpy, more rounded, like small elephant feet.</li>
+                        <li>**The Trail:** Look for a staggered, walking pattern with parallel lines. In very loose sand, you might see a faint, continuous line where the bottom of the shell (plastron) or tail drags.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Life Cycle and Nesting -->
+        <div id="slide-4" class="slide">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 pb-2 border-emerald-500">
+                4. Nesting Habits
+            </h2>
+            <div class="md:flex md:space-x-8 text-gray-700">
+                <div class="md:w-1/2 space-y-4">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Reproduction and Hatching</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>**Mating** occurs from April to June.</li>
+                        <li>**Nesting** typically takes place in May or June. The female usually digs a nest cavity right in the **burrow apron** where the sand is loose and sunny, ensuring the eggs get enough heat.</li>
+                        <li>She lays only one **clutch** (group of eggs) per year, containing 5 to 15 eggs.</li>
+                        <li>**Incubation** lasts about 80 to 100 days.</li>
+                    </ul>
+
+                    <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-semibold text-lg text-blue-800">Temperature and Sex</h4>
+                        <p class="text-sm mt-1">
+                            Like many reptiles, the sex of the Gopher Tortoise hatchlings is determined by the incubation temperature. This is called **Temperature-Dependent Sex Determination (TSD)**. Warmer nests produce females; cooler nests produce males.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/400x300/93C5FD/FFFFFF?text=Gopher+Tortoise+Hatchling" alt="Placeholder image of a Gopher Tortoise hatchling, which are often bright yellow and very small." class="w-full h-auto object-cover rounded-xl shadow-lg mt-6 md:mt-0"/>
+                    <p class="text-xs text-center italic mt-2 text-gray-500">
+                        Hatchlings are tiny and vulnerable, often seeking shelter in the parent's burrow before digging their own small tunnel.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Resources -->
+        <div id="slide-5" class="slide">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 pb-2 border-emerald-500">
+                5. Useful Resources & Links
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 text-gray-700">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-semibold text-gray-800">Official Information Links</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li><a href="https://www.outdooralabama.com/gopher-tortoise-day" target="_blank" class="text-blue-600 hover:text-blue-800 underline">
+                            Outdoor Alabama: Gopher Tortoise Day & Facts
+                        </a> - State-specific conservation and fun facts.</li>
+                        <li><a href="https://www.fws.gov/species/gopher-tortoise-gopherus-polyphemus" target="_blank" class="text-blue-600 hover:text-blue-800 underline">
+                            U.S. Fish & Wildlife Service Species Profile
+                        </a> - Federal status and recovery efforts.</li>
+                        <li><a href="https://www.forestry.alabama.gov/Pages/Informational/Endangered/Gopher_Tortoise.pdf" target="_blank" class="text-blue-600 hover:text-blue-800 underline">
+                            Alabama Forestry Gopher Tortoise Management
+                        </a> - Information on land management to protect the species.</li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-semibold text-gray-800">Educational Videos & Search Ideas</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>**Search YouTube for:** "Gopher Tortoise keystone species" to understand the burrow's importance.</li>
+                        <li>**Search YouTube for:** "Gopher Tortoise prescribed fire" to see how land managers maintain the longleaf pine habitat.</li>
+                        <li>**Search Google for:** "Gopher Tortoise relocation Alabama" to learn about legal processes when development occurs.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 p-4 bg-red-50 rounded-lg border-l-4 border-red-500 text-red-800">
+                <p class="font-bold">Important Note:</p>
+                <p class="text-sm">Gopher Tortoises and their burrows are federally and state protected. It is illegal to disturb, harm, or collect them. Observe them from a respectful distance.</p>
+            </div>
+        </div>
+
+
+        <!-- Footer: Navigation and Progress -->
+        <footer class="p-4 bg-gray-100 flex justify-between items-center rounded-b-xl">
+            <!-- Pagination Dots -->
+            <div id="dots-container" class="flex-grow text-center">
+                <span class="slide-dot dot-active" data-slide="1"></span>
+                <span class="slide-dot" data-slide="2"></span>
+                <span class="slide-dot" data-slide="3"></span>
+                <span class="slide-dot" data-slide="4"></span>
+                <span class="slide-dot" data-slide="5"></span>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex space-x-3">
+                <button id="prev-btn" class="prev-btn px-4 py-2 rounded-full font-semibold transition-transform duration-150 active:scale-95 disabled:opacity-50" disabled>
+                    Previous
+                </button>
+                <button id="next-btn" class="next-btn px-4 py-2 rounded-full font-semibold transition-transform duration-150 active:scale-95">
+                    Next
+                </button>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slide-dot');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function updateSlide(index) {
+            // Hide all slides and remove active class from dots
+            slides.forEach((slide, i) => {
+                slide.classList.remove('slide-active');
+                slide.style.display = 'none';
+                dots[i].classList.remove('dot-active');
+            });
+
+            // Show the current slide and activate the corresponding dot
+            slides[index].classList.add('slide-active');
+            slides[index].style.display = 'flex';
+            dots[index].classList.add('dot-active');
+
+            // Update button states
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === totalSlides - 1;
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                updateSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                updateSlide(currentSlide - 1);
+            }
+        }
+
+        // Event Listeners for Buttons
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Event Listeners for Dots (allows direct jump)
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-slide')) - 1;
+                updateSlide(index);
+            });
+        });
+
+        // Initialize the first slide
+        window.onload = () => {
+             updateSlide(0);
+        };
+    </script>
+</body>
+</html>

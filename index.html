@@ -1,10 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Awesome Really Cool Super Duper Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endangered Turtle Tracker</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import and application */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A192F; /* Dark background */
+            color: #E2E8F0; /* Light text */
+            transition: background-color 0.3s;
+        }
+        .turtle-card {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .turtle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.7);
+        }
+    </style>
 </head>
-<body>
-<h1>Hello, World! Watch out, for I am coming for you.</h1>
-<p>Welcome to my first GitHub Pages website. Beware for this will not be the last.</p>
+<body class="min-h-screen p-4 sm:p-8">
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Section 1: Title and Opening Paragraph -->
+        <header class="text-center mb-12 py-10 bg-gray-800 rounded-xl shadow-2xl">
+            <h1 class="text-5xl sm:text-7xl font-extrabold text-green-400 tracking-tight mb-4">
+                Endangered Turtle Tracker
+            </h1>
+            <p class="text-lg sm:text-xl max-w-3xl mx-auto text-gray-300 px-4">
+                Turtles have roamed the Earth for millions of years, acting as crucial indicators of environmental health. This project is dedicated to raising awareness about five magnificent, yet vulnerable, species. By understanding their struggles and the threats they face, we can become better stewards of their habitats and ensure these ancient mariners and land-dwellers continue to thrive for generations to come. Your journey into conservation starts here.
+            </p>
+        </header>
+
+        <!-- Section 2: Interactive Links/Cards -->
+        <section class="mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 text-indigo-400">
+                Species Profiles & Interactive Presentations
+            </h2>
+
+            <!-- Grid for Turtle Cards (Responsive) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+                <!-- Helper function for the SVG turtle icon -->
+                <script>
+                    function getTurtleSvg(color, type) {
+                        // Simple SVG for a turtle icon (sea turtle shape)
+                        return `
+                            <svg class="w-20 h-20 mx-auto mb-4 ${color}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 7.5l-2.25-2.25M14.25 9.75H18m0 0l-2.25 2.25M18 9.75v-4.5m0 4.5l-2.25-2.25M6 18h2.25L10.5 15.75m0 0l2.25 2.25m-2.25-2.25H12m0 0V21m0-2.25l-2.25 2.25M6 18v-4.5m0 4.5l2.25-2.25m-2.25-2.25h4.5M6 13.5v-4.5m4.5 4.5V9m4.5 4.5V9" />
+                                <circle cx="12" cy="12" r="11" stroke-width="1.5" class="opacity-30"/>
+                            </svg>
+                        `;
+                    }
+                </script>
+
+                <!-- 1. Kemp's Ridley Sea Turtle (kimp.html) -->
+                <div class="turtle-card bg-gray-700 p-6 rounded-xl text-center flex flex-col justify-between">
+                    <div class="icon-placeholder text-yellow-300">
+                        <!-- Turtle Icon -->
+                        <script>document.write(getTurtleSvg('text-green-500', 'sea'));</script>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-2 text-green-400">Kemp's Ridley Sea Turtle</h3>
+                        <p class="text-sm text-gray-400 mb-4">Pioneered conservation focus on nesting beaches (1970s)</p>
+                        <a href="kimp.html" class="inline-block w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-full shadow-lg transition duration-200 transform hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-green-500/50">
+                            View Presentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. Loggerhead Sea Turtle (log.html) -->
+                <div class="turtle-card bg-gray-700 p-6 rounded-xl text-center flex flex-col justify-between">
+                    <div class="icon-placeholder text-blue-300">
+                        <!-- Turtle Icon -->
+                        <script>document.write(getTurtleSvg('text-blue-500', 'sea'));</script>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-2 text-blue-400">Loggerhead Sea Turtle</h3>
+                        <p class="text-sm text-gray-400 mb-4">Major focus on reducing bycatch globally (1980s)</p>
+                        <a href="log.html" class="inline-block w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-lg transition duration-200 transform hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-blue-500/50">
+                            View Presentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Gopher Tortoise (go.html) -->
+                <div class="turtle-card bg-gray-700 p-6 rounded-xl text-center flex flex-col justify-between">
+                    <div class="icon-placeholder text-yellow-500">
+                        <!-- Turtle Icon (simulated land turtle) -->
+                        <script>document.write(getTurtleSvg('text-yellow-600', 'land'));</script>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-2 text-yellow-400">Gopher Tortoise</h3>
+                        <p class="text-sm text-gray-400 mb-4">Keystone species recognized for burrow protection (1990s)</p>
+                        <a href="go.html" class="inline-block w-full py-3 px-4 bg-yellow-600 hover:bg-yellow-700 text-white font-bold rounded-full shadow-lg transition duration-200 transform hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-yellow-500/50">
+                            View Presentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Flattened Musk Turtle (musk.html) -->
+                <div class="turtle-card bg-gray-700 p-6 rounded-xl text-center flex flex-col justify-between">
+                    <div class="icon-placeholder text-pink-500">
+                        <!-- Turtle Icon -->
+                        <script>document.write(getTurtleSvg('text-pink-600', 'freshwater'));</script>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-2 text-pink-400">Flattened Musk Turtle</h3>
+                        <p class="text-sm text-gray-400 mb-4">Specific protection focus on riverine habitats (2000s)</p>
+                        <a href="musk.html" class="inline-block w-full py-3 px-4 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-full shadow-lg transition duration-200 transform hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-pink-500/50">
+                            View Presentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. Alabama Red-bellied Turtle (fred.html) -->
+                <div class="turtle-card bg-gray-700 p-6 rounded-xl text-center flex flex-col justify-between">
+                    <div class="icon-placeholder text-red-500">
+                        <!-- Turtle Icon -->
+                        <script>document.write(getTurtleSvg('text-red-600', 'freshwater'));</script>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-2 text-red-400">Alabama Red-bellied Turtle</h3>
+                        <p class="text-sm text-gray-400 mb-4">Highlighting state-level critical habitat (Recent Spotlight)</p>
+                        <a href="fred.html" class="inline-block w-full py-3 px-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-lg transition duration-200 transform hover:scale-[1.03] focus:outline-none focus:ring-4 focus:ring-red-500/50">
+                            View Presentation
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer (Optional) -->
+        <footer class="text-center py-6 border-t border-gray-700 mt-12">
+            <p class="text-sm text-gray-500">A project dedicated to wildlife conservation awareness.</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
